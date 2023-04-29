@@ -1,10 +1,8 @@
-
-
 const yargs= require('yargs');
 const axios =require('axios').default;
 
 let argv = yargs.argv;
-let pokemon
+let pokemon;
 
 let url='https://pokeapi.co/api/v2/pokemon/'
 
@@ -12,7 +10,7 @@ const getData = async () => {
 	const response = await axios.get(
 		url
 	);
-    let pokemon= response.data.results
+    pokemon= response.data.results
     pokemon.forEach(element => {
         
         const getData2=async()=>{
@@ -46,7 +44,11 @@ const getData = async () => {
 
 };
 
-getData()
+
+
+module.exports=getData;
+
+
 
 
 
