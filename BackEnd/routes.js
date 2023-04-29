@@ -45,7 +45,7 @@ function allPokemon(req, res){
             
             //movimientos de los pokemones
             response2.data.moves.forEach(element => {
-                moves=element.move;
+                moves=element.move.name;
                
             });
 
@@ -92,64 +92,64 @@ function allPokemon(req, res){
     
 }
 
-function getAllPokemon(){
-    let pokemonList2=[];
-    const getData = async () => {
-        const response = await axios.get(
-            url
-        );
-        let pokemon= response.data.results
+// function getAllPokemon(){
+//     let pokemonList2=[];
+//     const getData = async () => {
+//         const response = await axios.get(
+//             url
+//         );
+//         let pokemon= response.data.results
         
         
        
-        return response.data.results;
+//         return response.data.results;
     
-    };
+//     };
     
-    getData().then(val => val.forEach(function(element, idx, array){
+//     getData().then(val => val.forEach(function(element, idx, array){
     
         
-        const getData2=async()=>{
-            const response2 = await axios.get(
-                element.url
-            );
+//         const getData2=async()=>{
+//             const response2 = await axios.get(
+//                 element.url
+//             );
            
-            pokemonUrlImage=response2.data.sprites.other.home.front_default;
+//             pokemonUrlImage=response2.data.sprites.other.home.front_default;
             
             
-            //movimientos de los pokemones
-            response2.data.moves.forEach(element => {
-                moves=element.move;
+//             //movimientos de los pokemones
+//             response2.data.moves.forEach(element => {
+//                 moves=element.move;
                
-            });
+//             });
 
             
-            onePokemon={
-                name: element.name,
-                weight: response2.data.weight,
-                height: response2.data.height,
-                moves: moves,
-                image_url: pokemonUrlImage
+//             onePokemon={
+//                 name: element.name,
+//                 weight: response2.data.weight,
+//                 height: response2.data.height,
+//                 moves: moves,
+//                 image_url: pokemonUrlImage
     
-            };
+//             };
 
-            return onePokemon;
+//             return onePokemon;
             
             
-        }
+//         }
 
         
-        getData2().then(val=>{
-            listPokemon.push(val);
-           // console.log(val);
-            console.log(listPokemon.length);
-            if( idx === array.length - 1){
-                pokemonList2=listPokemon;
-                //console.log(pokemonList2);
-                return listPokemon;
+//         getData2().then(val=>{
+//             listPokemon.push(val);
+//            // console.log(val);
+//             console.log(listPokemon.length);
+//             if( idx === array.length - 1){
+//                 pokemonList2=listPokemon;
+//                 //console.log(pokemonList2);
+//                 return listPokemon;
 
-            }
-        });
+//             }
+//         });
             
         
         
@@ -157,10 +157,10 @@ function getAllPokemon(){
         
         
         
-    }));
-   // return pokemonList2;
+//     }));
+//    // return pokemonList2;
 
-}
+// }
 
 
 routes.get('/:pokemon',pokemonByName);
@@ -204,7 +204,7 @@ getData().then(val => val.forEach(function(element, idx, array){
             name: element.name,
             weight: response2.data.weight,
             height: response2.data.height,
-            moves: moves,
+            moves: moves.name,
             image_url: pokemonUrlImage
 
         };
@@ -230,7 +230,7 @@ getData().then(val => val.forEach(function(element, idx, array){
             
 
         }
-    });
+    })
         
     
     
@@ -240,7 +240,7 @@ getData().then(val => val.forEach(function(element, idx, array){
     
 }));
 
-    console.log('holi');
+    
     // response.send("hey");
 
 

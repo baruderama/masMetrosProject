@@ -19,7 +19,7 @@
       <PokemonBox 
         v-for="pokemon in latestPokemons"
         v-bind:key="pokemon.name"
-        v-bind:product="pokemon" />
+        v-bind:pokemon="pokemon" />
     </div>
   </div>
 </template>
@@ -52,6 +52,7 @@ export default {
 
       await axios
       .get('/api/')
+
       .then(response =>{
         
         this.latestPokemons=response.data
