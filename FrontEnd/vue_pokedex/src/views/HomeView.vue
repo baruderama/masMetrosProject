@@ -17,9 +17,9 @@
       </div>
 
       <PokemonBox 
-        v-for="product in latestProducts"
-        v-bind:key="product.name"
-        v-bind:product="product" />
+        v-for="pokemon in latestPokemons"
+        v-bind:key="pokemon.name"
+        v-bind:product="pokemon" />
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
   name: 'HomeView',
   data(){
     return {
-      latestProducts:[]
+      latestPokemons:[]
     }
   },
   components: {
@@ -42,20 +42,20 @@ export default {
     PokemonBox
   },
   mounted(){
-    this.getLatestProducts()
+    this.getLatestPokemons()
 
     document.title= 'Home | Pokedex'
   },
   methods:{
-    async getLatestProducts(){
+    async getLatestPokemons(){
       this.$store.commit('setIsLoading',true)
 
       await axios
       .get('/api/')
       .then(response =>{
         
-        this.latestProducts=response.data
-        console.log(this.latestProducts.at(2).name)
+        this.latestPokemons=response.data
+        console.log(this.latestPokemons.at(2).name)
       })
       .catch(error => {
         console.log(error)
