@@ -3,10 +3,10 @@ import { default } from '../views/Category.vue';
     <div class="columns is-3">
         <div class="box">
             <figure class="image mb-4">
-                <img :src="product.image_url">
+                <img :src="pokemon.image_url">
             </figure>
 
-            <h3 class="is-size-4">{{ product.name }}</h3>
+            <h3 class="is-size-4">{{ pokemon.name }}</h3>
             <p class="is-size-6 has-text-grey">otras cosas</p>
 
             <!-- <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View details</router-link> -->
@@ -19,7 +19,7 @@ import { default } from '../views/Category.vue';
     export default{
         name: 'PokemonBox',
         props: {
-            product: Object
+            pokemon: Object
         }
     }
 
