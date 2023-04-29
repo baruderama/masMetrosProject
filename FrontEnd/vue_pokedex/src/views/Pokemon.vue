@@ -13,6 +13,8 @@
                 <h2 class="subtitle">Information</h2>
 
                 <p><strong>Moves: </strong>{{ product.moves }}</p>
+                <p><strong>Weight: </strong>{{ product.weight }}</p>
+                <p><strong>Height: </strong>{{ product.height }}</p>
 
                
             </div>

@@ -224,6 +224,9 @@ getData().then(val => val.forEach(function(element, idx, array){
                 if(word === element.name){
                     res.send(element);
                 }
+                else{
+                    res.send(null)
+                }
                 
             });
             

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Pokemon from '@/views/Pokemon.vue'
+import Search from '../views/Search.vue'
 
 const routes = [
   {
@@ -20,7 +21,12 @@ const routes = [
     path: '/pokemon/:pokemon',
     name: 'pokemon',
     component: Pokemon
-  }
+  },
+  {
+    path:'/search',
+    name:'Search',
+    component: Search
+  },
 ]
 
 const router = createRouter({
