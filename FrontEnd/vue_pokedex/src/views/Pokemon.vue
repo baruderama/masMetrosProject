@@ -10,7 +10,7 @@
                     <img v-bind:src="product.image_url">
                 </figure>
                 <h1 class="title">{{ product.name }}</h1>
-                <p>{{ product.weight }}</p>
+                
             </div>
             <div class="column is-3">
                 <h2 class="subtitle">Information</h2>
@@ -58,7 +58,7 @@ export default {
                 .get(`/api/${pokemonName}/`).
                 then(response => {
                     this.product = response.data
-
+                    console.log(this.product)
                     document.title= this.product.name + ' | Pokemon'
                 })
                 .catch(error => {
