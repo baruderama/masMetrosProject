@@ -3,6 +3,9 @@ const routes= require('./routes');
 const morgan = require('morgan');
 const cors = require('cors');
 
+var fs = require('fs');
+var https = require('https');
+
 const app = express();
 
 /*
@@ -36,6 +39,10 @@ app.use('/api', routes)
 /*
 Aqui se sube el servidor al puerto especificado
 */
-app.listen(app.get('port'),()=>{
+https.createServer({
+    cert: fs.readFileSync('cert.pem'),
+    key: fs.readFileSync('key.pem')
+  },
+app).listen(app.get('port'),()=>{
     console.log('server running on port',app.get('port'))
 })
