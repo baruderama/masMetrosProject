@@ -1,8 +1,10 @@
+<!-- Esta vista es la plantilla principal de la pagina para todas las vistas aqui se crea el campo de busqueda de pokedex y una navbar -->
+
 <template>
   <div id="wrapper">
     <nav class="navbar is-dark">
       <div class="navbar-brand">
-        <router-link to="/" class="navbar-item"><strong>Djackets</strong></router-link>
+        <router-link to="/" class="navbar-item"><strong>Pokedex</strong></router-link>
 
         <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu"
           @click="showMobileMenu = !showMobileMenu">
@@ -52,6 +54,7 @@
       <div class="lds-dual-ring"></div>
     </div>
     <section class="section">
+      <!-- Aqui especificamente se llama al router view para traer las vistas en especifico la primera que se va a mostrar es HomeView siempre -->
       <router-view />
     </section>
     <footer class="footer">
@@ -61,33 +64,13 @@
 </template>
 
 <script>
+// Aqui en especifico se sete la varible para mostrar el menu cuando se muestre la aplicacion en celular parte responsive del proyecto
 export default {
   data() {
     return {
       showMobileMenu: false,
-      cart:{
-        items:[]
-      }
     }
   },
-  beforeCreate(){
-    this.$store.commit('initializeStore')
-  },
-  mounted(){
-    this.cart=this.$store.state.cart
-
-  },
-  computed:{
-    cartTotalLength(){
-      let totalLength=0
-
-      for(let i=0;i<this.cart.items.length; i++){
-        totalLength += this.cart.items[i].quantity
-      }
-
-      return totalLength
-    }
-  }
 }
 
 </script>

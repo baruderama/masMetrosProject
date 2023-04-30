@@ -1,4 +1,10 @@
-import { default } from '../views/Category.vue';
+<!-- En este componente se construye un especie de caja o tarjeta en donde se va a ver
+    reflejado un pokemon con informacion basica y un boton el cual llevara al usuario a una vista 
+    detalla del pokemon en donde se va a encontrar mas informacion del mismo
+-->
+
+
+
 <template>
     <div class="columns is-3">
         <div class="box">
@@ -7,15 +13,17 @@ import { default } from '../views/Category.vue';
             </figure>
 
             <h3 class="is-size-4">{{ pokemon.name }}</h3>
-            <p class="is-size-6 has-text-grey">otras cosas</p>
 
-            <!-- <router-link v-bind:to="product.get_absolute_url" class="button is-dark mt-4">View details</router-link> -->
+            <router-link v-bind:to="`/pokemon/${pokemon.name}`" v-bind:key="pokemon.name" class="button is-dark mt-4">View details</router-link>
+
+            
         </div>
 
     </div>
 </template>
 
 <script>
+    // A traves del objecto con nombre pokemon se obtiene la informacion para poder llenar los diferentes tags de este componente 
     export default{
         name: 'PokemonBox',
         props: {

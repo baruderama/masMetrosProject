@@ -3,6 +3,10 @@
 ## Project setup
 ```
 npm install
+npm install:
+    axios
+    bulma
+
 ```
 
 ### Compiles and hot-reloads for development
