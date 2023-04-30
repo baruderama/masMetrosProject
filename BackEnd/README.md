@@ -1,6 +1,6 @@
 # Back-End set up
 ```
-npm install:
+npm install
     cors
     express
     morgan
