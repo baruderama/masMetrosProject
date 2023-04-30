@@ -1,3 +1,6 @@
+<!-- Esta vista es la del pokemon con toda su informacion -->
+
+
 <template>
     <div class="page-product">
         <div class="columns is-multiline">
@@ -27,14 +30,13 @@
 import { throwStatement } from '@babel/types'
 import {useRoute,useRouter,RouterView} from "vue-router"
 import axios from 'axios'
-// import {toast} from 'bulma-toast'
 
 export default {
     name: 'Pokemon',
     data() {
         return {
             product: {},
-            quantity: 1
+            
         }
     },
     mounted() {
@@ -45,15 +47,14 @@ export default {
         async getProduct() {
             this.$store.commit('setIsLoading',true)
 
-            // const category_slug = this.$route.params.category_slug
-            // const product_slug = this.$route.params.product_slug
-            // const route=useRoute()
+            
 
             const pokemonName=this.$route.params.pokemon
             console.log(pokemonName)
 
 
             await axios
+            // Aqui especificamente se consulta a la api del backend especificamente el metodo get en el cual se devuelve el objeto de un pokemon con toda su informacion
                 .get(`/api/${pokemonName}/`).
                 then(response => {
                     this.product = response.data

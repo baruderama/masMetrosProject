@@ -1,3 +1,6 @@
+<!-- Aqui se establece la vista cuando se busca un pokemon en el cual se mostrara el componente de PokemonBox si el pokemon que se inserto existe y si no se mostrara un mensaje que dice que ese pokemon no existe -->
+
+
 <template>
     <div class="page-search">
         <div class="columns is-multiline">
@@ -45,6 +48,8 @@ export default {
     methods: {
         async performSearch() {
             this.$store.commit('setIsLoading', true)
+
+            // Aqui especificamente se consulta a la api del backend especificamente el metodo get en el cual se devuelve el objeto de un pokemon con toda su informacion
             await axios
                 .get(`/api/${this.query}/`)
                 .then(response => {
