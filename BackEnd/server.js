@@ -39,10 +39,10 @@ app.use('/api', routes)
 /*
 Aqui se sube el servidor al puerto especificado
 */
-https.createServer({
-    cert: fs.readFileSync('cert.pem'),
-    key: fs.readFileSync('key.pem')
-  },
-app).listen(app.get('port'),()=>{
+// https.createServer({
+//     cert: fs.readFileSync('cert.pem'),
+//     key: fs.readFileSync('key.pem')
+//   },
+app.listen(app.get('port'),()=>{
     console.log('server running on port',app.get('port'))
 })
