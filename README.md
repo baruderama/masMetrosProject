@@ -1,6 +1,6 @@
 # masMetrosProject
 Proyecto hecho con vue.js y node.js para consultar como correr el back y el front
-pueden ver los README.md correspondientes
+pueden ver los README.md correspondientes. El BackEnd esta desplegado en `aws` en un `ec2` de linux con la distribucion de ubuntu y el front esta desplegado en el `hosting` de `firebase`
 
 ## Link del proyecto subido en
 ```
