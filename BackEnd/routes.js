@@ -140,13 +140,17 @@ getData().then(val => val.forEach(function(element, idx, array){
                 }
                 else{
                     //Si no entonces se envia nulo 
-                    res.send(null)
+                    
                 }  
             });
+            res.send(null);
         }
     })
   
-}));
+
+}
+
+));
 }
 
 //Se exporta el modulo de rutas para poder usarlo desde server.js
