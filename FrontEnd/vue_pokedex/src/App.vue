@@ -18,7 +18,27 @@
       <div class="navbar-menu" id="navbar-menu" v-bind:class="{ 'is-active': showMobileMenu }">
         <div class="navbar-start">
           <div class="navbar-item">
-            <form method="get" action="/search">
+            <div class="field has-addons">
+              <div class="control">
+                <input v-model.trim="search" type="text" class="input" placeholder="what are you looking for?" name="query">
+              </div>
+              <div class="control">
+                <router-link v-bind:to="`/search/${search}`" v-bind:key="search" class="button is-success">
+                  <span class="icon">
+                    <i class="fas fa-search"></i>    
+                  </span>
+                </router-link>
+                
+                
+                    
+                  
+                
+              </div>
+
+              
+            </div>
+            
+            <!-- <form action="/search">
               <div class="field has-addons">
                 <div class="control">
                   <input type="text" class="input" placeholder="what are you looking for?" name="query">
@@ -35,7 +55,7 @@
 
               </div>
 
-            </form>
+            </form> -->
 
           </div>
 
@@ -69,6 +89,7 @@ export default {
   data() {
     return {
       showMobileMenu: false,
+      search :''
     }
   },
 }

@@ -29,7 +29,7 @@ const routes = [
 
   //Ruta a la vista en donde aparecera la tarjeta/caja del pokemon que se consulto en la barra de busqueda 
   {
-    path:'/search',
+    path:'/search/:search',
     name:'Search',
     component: Search
   },

@@ -7,7 +7,7 @@
             <div class="column is-12">
                 <h1 class="title">Search</h1>
 
-                <h2 class="is-size-5 has-text-grey">Search term: "{{ query }}"</h2>
+                <!-- <h2 class="is-size-5 has-text-grey">Search term: "{{ search }}"</h2> -->
             </div>
             <div class="mostrar" v-if="pokemon">
             <PokemonBox 
@@ -38,23 +38,34 @@ export default {
     },
     mounted() {
         document.title = 'Search | Pokemon'
-        let uri = window.location.search.substring(1)
-        let params = new URLSearchParams(uri)
-        if (params.get('query')) {
-            this.query = params.get('query')
-            this.performSearch()
+        this.performSearch()
+        // let uri = window.location.search.substring(1)
+        // let params = new URLSearchParams(uri)
+        // if (params.get('query')) {
+        //     this.query = params.get('query')
+        //     this.performSearch()
+        // }
+    },
+    watch:{
+        $route(to,from){
+            if(to.name === 'Search'){
+                this.performSearch()
+            }
         }
+
     },
     methods: {
         async performSearch() {
             this.$store.commit('setIsLoading', true)
+            const pokemonName=this.$route.params.search
+            console.log(pokemonName)
 
             // Aqui especificamente se consulta a la api del backend especificamente el metodo get en el cual se devuelve el objeto de un pokemon con toda su informacion
             await axios
-                .get(`/api/${this.query}/`)
+                .get(`/api/${pokemonName}/`)
                 .then(response => {
                     this.pokemon = response.data
-                    console.log(this.pokemon)    
+                    console.log(pokemonName)    
                            
                    })
                 .catch(error => {

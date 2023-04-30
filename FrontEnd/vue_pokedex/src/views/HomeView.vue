@@ -58,7 +58,6 @@ export default {
 
       // en esye commit se setea la animacion de loading
       this.$store.commit('setIsLoading',true)
-
       // Aqui se consulta a la funcion en el api del backend en el que se consultan todos los pokemones
       await axios
       .get('/api/')
