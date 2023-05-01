@@ -3,9 +3,9 @@
 ## Project setup
 ```
 npm install
-npm install:
-    axios
-    bulma
+```
+```
+npm install axios bulma
 
 ```
 
