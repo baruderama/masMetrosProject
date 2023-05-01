@@ -1,23 +1,17 @@
 # Back-End set up
 ```
-npm install
-    cors
-    express
-    morgan
-    yargs
-    axios
+npm install cors express morgan yargs axios
 ```
 
-## start the server
-this you have to install it in administrator cmd: 
+## Start the server
+This you have to install it in administrator cmd: 
 (this is for set up the node backend forever without interrumtions)
 
 ```
 npm install pm2 -g
 ```
 
-## start the server
-In administrator cmd you have ti run this command:
+In administrator cmd you have to run this command:
 
 ```
 pm2 start server.js
