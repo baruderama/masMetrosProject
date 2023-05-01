@@ -16,5 +16,5 @@ https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoo
 Lo más difícil de la prueba, que en realidad fue lo más demorado, yo diría que toda la parte de front-end en especial las vistas ya que uno siempre se demora organizando y dejando cada tag presentable y bonito a la vista. Y un poco el despliegue en cuanto al front, a que en el local funcionaba y ya hosteado en firebase saltaban errores nuevos.
 
 ### Configuración para correr el proyecto de forma local
-    [1]:https://github.com/baruderama/masMetrosProject/blob/main/FrontEnd/vue_pokedex/README.md/  "README Front"
+    [README Front] (https://github.com/baruderama/masMetrosProject/blob/main/FrontEnd/vue_pokedex/README.md/)
 
